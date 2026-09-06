@@ -1,52 +1,72 @@
-# 🚗 Renault Experience — Agenda 2 Días
+RENAULT NIAGARA — 4 AGENDAS POR GRUPO
+=======================================
 
-## 📦 Contenido
+ARCHIVOS:
+- brasil.html              → Agenda Grupo Brasil (35 stickers + backup)
+- argentina_cba_mza.html   → Agenda Grupo Argentina Córdoba/Mendoza (5 stickers + backup)
+- argentina_general.html   → Agenda Grupo Argentina General (50 stickers + backup)
+- colombia.html            → Agenda Grupo Colombia (10 stickers + backup)
+- fondo.png                → Fondo del evento
+- logo.png                 → Logo Renault + The Dawn of Adventure
+- CNAME                    → Configuración de dominio custom
 
-```
-📁 agenda_renault_2dias/
-├── 📄 index.html             ← Día 1: PreShow (9 de Septiembre) — página principal
-├── 📄 dia2_reveal.html       ← Día 2: Global Reveal (10 de Septiembre)
-├── 🖼️ bg_vertical.png        ← Fondo 1080x1920
-├── 🖼️ logo_renault.png       ← Logo Renault Niagara + The Dawn of Adventure (PNG transparente)
-├── 🖼️ bg_vertical.jpg        ← Fondo anterior (respaldo)
-├── 📁 qr/
-│   ├── qr_dia1.png           ← QR para Día 1
-│   └── qr_dia2.png           ← QR para Día 2
-└── 📄 README.txt             ← Este archivo
-```
+═══════════════════════════════════════════════════════════════
+DATOS DE CADA GRUPO
+═══════════════════════════════════════════════════════════════
 
-## 🎨 Diseño
+GRUPO BRASIL (35 stickers + backup)
+  Día 0 (8 Sep): Cena informal en La Butaca
+  Día 1 (9 Sep): Breakfast → Leisure → Lunch → PreShow → Content Creation → Dinner Vigil
+  Día 2 (10 Sep): Breakfast → Transfer → Global Reveal → Content Creation → Airport
 
-- **Resolución:** Optimizado para 1080 x 1920 (full HD vertical)
-- **Fondo:** Imagen real, proporción original, scrollea con la página
-- **UI:** Liquid glass con backdrop-filter blur + saturate
-- **Colores:** Dorado #C9A96E · Blanco #F5F5F5
-- **Tipografía:** NouvaR (archivos NouvaR-Regular.woff2 / NouvaR-Bold.woff2 en la carpeta; fallback Space Grotesk)
-- **Logo:** Renault Niagara + The Dawn of Adventure (PNG transparente)
+GRUPO ARGENTINA CÓRDOBA/MENDOZA (5 stickers + backup)
+  Día 1 (9 Sep): Acreditación → PreShow → Content Creation → Lunch → Leisure → Dinner Vigil
+  Día 2 (10 Sep): Breakfast → Transfer → Global Reveal → Content Creation → Airport
+  NOTA: Incluye cena en Vigil, desayuno y transfer al aeropuerto
 
-## 🔗 URLs para los QR
+GRUPO ARGENTINA GENERAL (50 stickers + backup)
+  Día 1 (9 Sep): Acreditación → PreShow → Content Creation → Lunch → Leisure
+  Día 2 (10 Sep): Acreditación → Global Reveal → Content Creation
+  NOTA: Sin cena Vigil, sin transfer al aeropuerto
 
-| Día | URL del QR |
-|-----|-----------|
-| **Día 1** | `tusitio.com/` (abre `index.html` directamente) |
-| **Día 2** | `tusitio.com/dia2_reveal.html` |
+GRUPO COLOMBIA (10 stickers + backup)
+  Día 1 (9 Sep): Arribo → Lunch → PreShow → Content Creation → Leisure → Dinner Vigil
+  Día 2 (10 Sep): Breakfast → Transfer → Global Reveal → Content Creation → Hotel → Dinner → Airport (03:00)
 
-## 🚀 Subir a GitHub Pages
+═══════════════════════════════════════════════════════════════
+URLS PARA LOS QR
+═══════════════════════════════════════════════════════════════
 
-1. Subí todos los archivos al repo (incluí `index.html`, `dia2_reveal.html`, `bg_vertical.png`, `logo_renault.png` y los `.woff2` de NouvaR si los tenés)
-2. En el repo: **Settings → Pages → Source: Deploy from a branch → main / (root)**
-3. GitHub te da la URL: `https://tuusuario.github.io/turepo/`
-4. Esa URL abre el **Día 1** directamente (es el `index.html`); la pestaña "SEP 10" navega al Día 2
+Subí los 6 archivos a GitHub Pages (o Netlify) y generá 4 QR:
 
-## ✏️ Personalizar para cada invitado
+| Grupo | URL para el QR |
+|-------|---------------|
+| Brasil | https://tusitio.com/brasil.html |
+| Argentina Cba/Mza | https://tusitio.com/argentina_cba_mza.html |
+| Argentina General | https://tusitio.com/argentina_general.html |
+| Colombia | https://tusitio.com/colombia.html |
 
-Editá el HTML y cambiá:
-- Los horarios del content creation
-- El nombre del invitado
-- La sala asignada
-- Los slots de Global Reveal que le correspondan
+═══════════════════════════════════════════════════════════════
+SUBIR A GITHUB PAGES
+═══════════════════════════════════════════════════════════════
 
-Los QR apuntan siempre a la misma URL, solo cambiás el contenido.
+1. Crear repo en GitHub (gratis)
+2. Subir los 6 archivos (4 HTML + fondo.png + logo.png)
+3. Settings → Pages → Branch: main → Save
+4. Esperar 2-3 minutos
+5. Tu URL será: https://tunombre.github.io/renault-niagara/brasil.html
+
+Para dominio custom:
+- Settings → Pages → Custom domain: renault-niagara.com
+- Configurar DNS (4 registros A + 1 CNAME)
+- Esperar 15-30 minutos
+
+═══════════════════════════════════════════════════════════════
+ACTUALIZAR AGENDA
+═══════════════════════════════════════════════════════════════
+
+Editá el HTML correspondiente, cambiá horarios/nombres, guardá,
+volvé a subir a GitHub. Los QR siguen funcionando porque la URL no cambia.
 
 ---
-Generado el 01/09/2026
+Renault Niagara · The Dawn of Adventure
