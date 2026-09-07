@@ -5,25 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#0a0a0a">
 <title>Renault Niagara — Colombia</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  @font-face { font-family: 'NouvelR'; src: url('NouvelR-Light.ttf') format('truetype'); font-weight: 300; font-display: swap; }
+  @font-face { font-family: 'NouvelR'; src: url('NouvelR-Book.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'NouvelR'; src: url('NouvelR-Regular.ttf') format('truetype'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'NouvelR'; src: url('NouvelR-Semibold.ttf') format('truetype'); font-weight: 600; font-display: swap; }
+  @font-face { font-family: 'NouvelR'; src: url('NouvelR-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'NouvelR'; src: url('NouvelR-Extrabold.ttf') format('truetype'); font-weight: 800; font-display: swap; }
   :root {
     --gold: #C9A96E; --gold-light: #D4B87A; --white: #F5F5F5;
     --gray: #888888; --gray-light: #AAAAAA; --gray-dark: #555555;
     --glass: rgba(12, 12, 12, 0.50); --glass-border: rgba(255, 255, 255, 0.06);
-    --font: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font: 'NouvelR', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { font-family: var(--font); background: #050505; color: var(--white); min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-  .bg { position: fixed; inset: 0; z-index: 0; background: url('fondo.png') center center / cover no-repeat; }
+  body { position: relative; min-height: max(100vh, 177.78vw); }
+  .bg { position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1080 / 1920; z-index: 0; background: url('fondo.png') center top / 100% auto no-repeat; }
+  @media (orientation: landscape) {
+    body { min-height: 100vh; }
+    .bg { aspect-ratio: 1920 / 720; background-image: url('fondo 1920x720.png'); }
+  }
   .bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,5,5,0.05) 0%, rgba(5,5,5,0.02) 25%, rgba(5,5,5,0.3) 60%, rgba(5,5,5,0.9) 100%); }
   .app { position: relative; z-index: 2; max-width: 1080px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
   .header { text-align: center; padding: 40px 30px 8px; position: relative; }
-  .header-logo { width: 200px; height: auto; margin: 0 auto; display: block; filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5)); }
-  .header-group { font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-top: 12px; }
-  .header-sub { font-size: 11px; color: var(--gray); margin-top: 4px; letter-spacing: 1px; }
+  .header-rombo { width: 64px; height: auto; margin: 0 auto 14px; display: block; filter: drop-shadow(0 4px 14px rgba(0,0,0,0.5)); }
+  .header-logo { width: min(260px, 70vw); height: auto; margin: 0 auto; display: block; filter: drop-shadow(0 4px 20px rgba(0,0,0,0.6)); }
+  .header-group { font-size: 13px; font-weight: 600; color: #FFFFFF; letter-spacing: 3px; text-transform: uppercase; margin-top: 12px; }
+  .header-sub { font-size: 11px; color: rgba(255,255,255,0.85); margin-top: 4px; letter-spacing: 1px; }
   .tabs-wrap { padding: 0 28px; margin-bottom: 14px; }
   .tabs { display: flex; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 6px; backdrop-filter: blur(20px); }
   .tab { flex: 1; text-align: center; padding: 10px 6px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; border: none; background: transparent; font-family: var(--font); }
@@ -31,7 +40,7 @@
   .tab-date { font-size: 22px; font-weight: 700; color: var(--gray-dark); margin-top: 2px; line-height: 1; }
   .tab.active { background: rgba(201, 169, 110, 0.12); border: 1px solid rgba(201, 169, 110, 0.2); }
   .tab.active .tab-day { color: var(--gold); } .tab.active .tab-date { color: var(--white); }
-  .content { flex: 1; padding: 0 24px 100px; overflow-y: auto; }
+  .content { flex: 1; padding: 0 24px 40px; overflow-y: auto; }
   .day-panel { display: none; } .day-panel.active { display: block; animation: fadeIn 0.35s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .section-label { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin: 18px 0 8px 4px; opacity: 0.6; }
@@ -63,12 +72,7 @@
   .note strong { color: var(--gold); }
   .footer { text-align: center; padding: 24px 0 30px; }
   .footer-line { width: 36px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 12px; }
-  .footer-text { font-size: 10px; color: var(--gray-dark); letter-spacing: 3px; text-transform: uppercase; }
-  .fab { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(to top, rgba(5,5,5,0.95) 50%, transparent); padding: 14px 24px 28px; display: flex; justify-content: center; gap: 10px; }
-  .fab-btn { padding: 11px 22px; border-radius: 12px; border: none; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; font-family: var(--font); transition: all 0.2s; }
-  .fab-btn:active { transform: scale(0.96); }
-  .fab-save { background: var(--gold); color: #000; } .fab-save.saved { background: rgba(46,125,50,0.9); color: white; }
-  .fab-refresh { background: rgba(255,255,255,0.04); color: var(--white); border: 1px solid rgba(255,255,255,0.08); }
+  .footer-text { font-size: 10px; color: rgba(255,255,255,0.6); letter-spacing: 3px; text-transform: uppercase; }
   .offline { position: fixed; top: 14px; right: 14px; z-index: 100; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.2); color: var(--gold); font-size: 10px; font-weight: 700; padding: 5px 12px; border-radius: 20px; display: none; letter-spacing: 1px; text-transform: uppercase; }
   .offline.show { display: block; }
   ::-webkit-scrollbar { width: 2px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: rgba(201,169,110,0.12); }
@@ -79,7 +83,8 @@
 <div class="offline" id="offlineBadge">Offline</div>
 <div class="app">
   <div class="header">
-    <img src="logo.png" alt="Renault Niagara" class="header-logo">
+    <img src="Renault Rombo.png" alt="Renault" class="header-rombo">
+    <img src="Renault Niagara the dawn of adventure.png" alt="Renault Niagara — The Dawn of Adventure" class="header-logo">
     <div class="header-group">Grupo Colombia</div>
     <div class="header-sub">Buenos Aires, Argentina</div>
   </div>
@@ -316,7 +321,7 @@
       <div class="agenda-item">
         <div class="item-row">
           <div class="item-time-wrap">
-            <div class="item-time">???</div>
+            <div class="item-time"></div>
             
           </div>
           <div class="item-divider"></div>
@@ -412,19 +417,10 @@
 
   </div>
 </div>
-<div class="fab">
-  <button class="fab-btn fab-refresh" onclick="location.reload()">Actualizar</button>
-  <button class="fab-btn fab-save" id="saveBtn" onclick="saveOffline()">Guardar Offline</button>
-</div>
 <script>
 function switchDay(index) {
   document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', i === index));
   document.querySelectorAll('.day-panel').forEach((p, i) => p.classList.toggle('active', i === index));
-}
-function saveOffline() {
-  localStorage.setItem('renault_grupo_colombia', 'saved');
-  document.getElementById('saveBtn').classList.add('saved');
-  document.getElementById('saveBtn').textContent = 'Guardado';
 }
 function checkOffline() {
   document.getElementById('offlineBadge').classList.toggle('show', !navigator.onLine);
@@ -432,10 +428,6 @@ function checkOffline() {
 window.addEventListener('online', checkOffline);
 window.addEventListener('offline', checkOffline);
 checkOffline();
-if (localStorage.getItem('renault_grupo_colombia')) {
-  document.getElementById('saveBtn').classList.add('saved');
-  document.getElementById('saveBtn').textContent = 'Guardado';
-}
 </script>
 </body>
 </html>
