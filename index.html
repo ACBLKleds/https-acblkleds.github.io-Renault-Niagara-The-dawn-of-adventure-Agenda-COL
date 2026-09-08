@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#0a0a0a">
-<title>Renault Niagara — Colombia</title>
+<title>Renault Niagara — Colombia Press</title>
 <style>
   @font-face { font-family: 'NouvelR'; src: url('NouvelR-Light.ttf') format('truetype'); font-weight: 300; font-display: swap; }
   @font-face { font-family: 'NouvelR'; src: url('NouvelR-Book.ttf') format('truetype'); font-weight: 400; font-display: swap; }
@@ -34,25 +34,24 @@
   .header-group { font-size: 13px; font-weight: 600; color: #FFFFFF; letter-spacing: 3px; text-transform: uppercase; margin-top: 12px; }
   .header-sub { font-size: 11px; color: rgba(255,255,255,0.85); margin-top: 4px; letter-spacing: 1px; }
   .tabs-wrap { padding: 0 28px; margin-bottom: 14px; }
-  .tabs { display: flex; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 6px; backdrop-filter: blur(20px); }
+  .tabs { display: flex; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 6px; backdrop-filter: blur(20px); }
   .tab { flex: 1; text-align: center; padding: 10px 6px; border-radius: 12px; cursor: pointer; transition: all 0.3s ease; border: none; background: transparent; font-family: var(--font); }
-  .tab-day { font-size: 10px; font-weight: 600; color: var(--gray); letter-spacing: 2px; text-transform: uppercase; }
-  .tab-date { font-size: 22px; font-weight: 700; color: var(--gray-dark); margin-top: 2px; line-height: 1; }
+  .tab-day { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 2px; text-transform: uppercase; }
+  .tab-date { font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.9); margin-top: 2px; line-height: 1; }
   .tab.active { background: rgba(201, 169, 110, 0.12); border: 1px solid rgba(201, 169, 110, 0.2); }
   .tab.active .tab-day { color: var(--gold); } .tab.active .tab-date { color: var(--white); }
   .content { flex: 1; padding: 0 24px 40px; overflow-y: auto; }
   .day-panel { display: none; } .day-panel.active { display: block; animation: fadeIn 0.35s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-  .section-label { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin: 18px 0 8px 4px; opacity: 0.6; }
+  .section-label { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin: 18px 0 8px 4px; text-shadow: 0 2px 10px rgba(0,0,0,0.7); }
   .agenda-item { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; padding: 16px 16px 14px; margin-bottom: 8px; backdrop-filter: blur(20px) saturate(1.2); -webkit-backdrop-filter: blur(20px) saturate(1.2); box-shadow: 0 6px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04); position: relative; overflow: hidden; }
   .agenda-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
   .item-row { display: flex; align-items: flex-start; gap: 12px; }
-  .item-time-wrap { min-width: 60px; text-align: right; flex-shrink: 0; padding-top: 2px; }
-  .item-time { font-size: 15px; font-weight: 700; color: var(--gold); line-height: 1.1; font-variant-numeric: tabular-nums; }
-  .item-time-end { font-size: 11px; font-weight: 400; color: var(--gray); margin-top: 2px; }
+  .item-time-wrap { min-width: 96px; text-align: right; flex-shrink: 0; padding-top: 2px; }
+  .item-time { font-size: 14px; font-weight: 700; color: var(--gold); line-height: 1.2; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .item-divider { width: 2px; min-height: 32px; background: linear-gradient(to bottom, var(--gold), rgba(201,169,110,0.15)); border-radius: 1px; flex-shrink: 0; margin-top: 2px; }
   .item-body { flex: 1; min-width: 0; }
-  .item-title { font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.25; letter-spacing: -0.2px; }
+  .item-title { font-size: 16px; font-weight: 700; color: var(--white); line-height: 1.25; letter-spacing: -0.2px; }
   .item-sub { font-size: 12px; color: var(--gray-light); margin-top: 3px; line-height: 1.4; }
   .item-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
   .tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; border: 1px solid; }
@@ -64,12 +63,13 @@
   .tag-transfer { color: #B8A0D0; background: rgba(184,160,208,0.08); border-color: rgba(184,160,208,0.15); }
   .tag-leisure { color: #888; background: rgba(136,136,136,0.06); border-color: rgba(136,136,136,0.12); }
   .tag-reveal { color: var(--gold); background: rgba(201,169,110,0.1); border-color: rgba(201,169,110,0.2); }
-  .alert-box { margin: 16px 0 8px; background: rgba(201, 169, 110, 0.08); border: 1px solid rgba(201, 169, 110, 0.2); border-radius: 16px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 10px; backdrop-filter: blur(20px); }
-  .alert-box .alert-icon { font-size: 16px; flex-shrink: 0; }
-  .alert-box .alert-text { font-size: 12px; font-weight: 500; color: var(--gold-light); line-height: 1.45; }
+  .alert-box { margin: 16px 0 8px; background: rgba(201, 169, 110, 0.16); border: 1px solid rgba(201, 169, 110, 0.45); border-radius: 16px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; backdrop-filter: blur(20px); }
+  .alert-box .alert-icon { font-size: 20px; flex-shrink: 0; }
+  .alert-box .alert-text { font-size: 14px; font-weight: 600; color: #EDD9AC; line-height: 1.5; }
   .alert-box .alert-text strong { color: var(--gold); }
-  .note { margin: 12px 0; padding: 12px 14px; background: rgba(255,255,255,0.02); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; font-size: 11px; color: var(--gray-light); line-height: 1.5; }
-  .note strong { color: var(--gold); }
+  .note-item { background: rgba(201,169,110,0.10); border: 1px solid rgba(201,169,110,0.28); }
+  .note-item .item-title { color: var(--gold); font-size: 15px; }
+  .note-item .item-sub { font-size: 13px; color: rgba(255,255,255,0.92); line-height: 1.55; margin-top: 5px; }
   .footer { text-align: center; padding: 24px 0 30px; }
   .footer-line { width: 36px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 12px; }
   .footer-text { font-size: 10px; color: rgba(255,255,255,0.6); letter-spacing: 3px; text-transform: uppercase; }
@@ -85,23 +85,23 @@
   <div class="header">
     <img src="Renault Rombo.png" alt="Renault" class="header-rombo">
     <img src="Renault Niagara the dawn of adventure.png" alt="Renault Niagara — The Dawn of Adventure" class="header-logo">
-    <div class="header-group">Grupo Colombia</div>
+    <div class="header-group">Colombia Press</div>
     <div class="header-sub">Buenos Aires, Argentina</div>
   </div>
   <div class="tabs-wrap">
     <div class="tabs">
       <button class="tab active" onclick="switchDay(0)">
-        <div class="tab-day">Sep</div>
+        <div class="tab-day">Sept</div>
         <div class="tab-date">9</div>
       </button>
       <button class="tab" onclick="switchDay(1)">
-        <div class="tab-day">Sep</div>
+        <div class="tab-day">Sept</div>
         <div class="tab-date">10</div>
       </button>
     </div>
   </div>
   <div class="content">
-    
+
       <div class="alert-box">
         <div class="alert-icon">🔒</div>
         <div class="alert-text">
@@ -109,7 +109,6 @@
         </div>
       </div>
 
-    
     <div class="day-panel active" id="day1">
       <div class="section-label">PreShow — Le Dome</div>
 
@@ -117,12 +116,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">12:00</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Arribo al Hotel</div>
-            <div class="item-sub">Sofitel Cardales — Equipaje en custodia en recepción hasta check-in</div>
+            <div class="item-title">Hotel Arrival</div>
+            <div class="item-sub">Arribo al hotel — Sofitel Cardales: equipaje en custodia en recepción hasta el check-in</div>
             <div class="item-tags"><span class="tag tag-reception">Arrival</span></div>
           </div>
         </div>
@@ -131,13 +129,12 @@
       <div class="agenda-item">
         <div class="item-row">
           <div class="item-time-wrap">
-            <div class="item-time">12:15</div>
-            <div class="item-time-end">14:00</div>
+            <div class="item-time">12:15 - 14:00</div>
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Almuerzo en Le Dome</div>
-            <div class="item-sub">Centro de Convenciones Le Dome</div>
+            <div class="item-title">Lunch at Le Dome</div>
+            <div class="item-sub">Almuerzo en el Centro de Convenciones Le Dome</div>
             <div class="item-tags"><span class="tag tag-lunch">Lunch</span></div>
           </div>
         </div>
@@ -146,13 +143,12 @@
       <div class="agenda-item">
         <div class="item-row">
           <div class="item-time-wrap">
-            <div class="item-time">14:00</div>
-            <div class="item-time-end">14:45</div>
+            <div class="item-time">14:00 - 14:45</div>
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">PreShow / Presentación + Q&A</div>
-            <div class="item-sub">Presentación del Renault Niagara</div>
+            <div class="item-title">PreShow / Presentation + Q&A</div>
+            <div class="item-sub">Presentación Renault Niagara</div>
             <div class="item-tags"><span class="tag tag-presentation">Presentation</span></div>
           </div>
         </div>
@@ -161,13 +157,12 @@
       <div class="agenda-item">
         <div class="item-row">
           <div class="item-time-wrap">
-            <div class="item-time">14:50</div>
-            <div class="item-time-end">18:00</div>
+            <div class="item-time">14:50 - 18:00</div>
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Creación de Contenido</div>
-            <div class="item-sub">Content Creation Slots</div>
+            <div class="item-title">Content Creation</div>
+            <div class="item-sub">Slots de creación de contenido</div>
             <div class="item-tags"><span class="tag tag-content">Content Creation</span></div>
           </div>
         </div>
@@ -176,12 +171,11 @@
       <div class="agenda-item">
         <div class="item-row">
           <div class="item-time-wrap">
-            <div class="item-time">18:00</div>
-            <div class="item-time-end">20:00</div>
+            <div class="item-time">18:00 - 20:00</div>
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Tiempo Libre</div>
+            <div class="item-title">Free Time</div>
             <div class="item-sub">Tiempo libre en el hotel</div>
             <div class="item-tags"><span class="tag tag-leisure">Leisure</span></div>
           </div>
@@ -192,11 +186,10 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">20:15</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Meeting Point — Transfer a Cena</div>
+            <div class="item-title">Meeting Point — Transfer to Dinner</div>
             <div class="item-sub">Lobby — Transfer a Bodega Estancia Vigil</div>
             <div class="item-tags"><span class="tag tag-transfer">Transfer</span></div>
           </div>
@@ -206,30 +199,25 @@
       <div class="agenda-item">
         <div class="item-row">
           <div class="item-time-wrap">
-            <div class="item-time">20:30</div>
-            <div class="item-time-end">23:00</div>
+            <div class="item-time">20:30 - 23:00</div>
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Cena en Bodega Estancia Vigil</div>
+            <div class="item-title">Dinner at Estancia Vigil Winery</div>
             <div class="item-sub">Cena en la bodega</div>
             <div class="item-tags"><span class="tag tag-dinner">Dinner</span></div>
           </div>
         </div>
       </div>
-<div class="section-label">Notas</div>
 
-      <div class="agenda-item">
+      <div class="section-label">Notas</div>
+
+      <div class="agenda-item note-item">
         <div class="item-row">
-          <div class="item-time-wrap">
-            <div class="item-time"></div>
-            
-          </div>
           <div class="item-divider"></div>
           <div class="item-body">
             <div class="item-title">Nota Importante</div>
             <div class="item-sub">Por tratarse de eventos confidenciales, se solicita llevar la credencial y la pulsera entregadas en el registro durante ambas jornadas.</div>
-            
           </div>
         </div>
       </div>
@@ -246,13 +234,12 @@
       <div class="agenda-item">
         <div class="item-row">
           <div class="item-time-wrap">
-            <div class="item-time">07:00</div>
-            <div class="item-time-end">08:00</div>
+            <div class="item-time">07:00 - 08:00</div>
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Desayuno en La Butaca</div>
-            <div class="item-sub">Restaurante La Butaca — Lobby</div>
+            <div class="item-title">Breakfast at La Butaca</div>
+            <div class="item-sub">Desayuno en Restaurante La Butaca — Lobby</div>
             <div class="item-tags"><span class="tag tag-lunch">Breakfast</span></div>
           </div>
         </div>
@@ -262,12 +249,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">08:00</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Encuentro en Lobby</div>
-            <div class="item-sub">Punto de encuentro para transfer al Global Reveal</div>
+            <div class="item-title">Meeting Point at Lobby</div>
+            <div class="item-sub">Punto de encuentro en el lobby para el transfer al Global Reveal</div>
             <div class="item-tags"><span class="tag tag-transfer">Transfer</span></div>
           </div>
         </div>
@@ -277,12 +263,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">08:15</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Salida hacia Renault Arena</div>
-            <div class="item-sub">Transfer al Global Reveal</div>
+            <div class="item-title">Departure to Renault Arena</div>
+            <div class="item-sub">Salida hacia Renault Arena — Transfer al Global Reveal</div>
             <div class="item-tags"><span class="tag tag-transfer">Transfer</span></div>
           </div>
         </div>
@@ -292,12 +277,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">09:00</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Acreditación & Coffee de Bienvenida</div>
-            <div class="item-sub">Registration & welcome coffee</div>
+            <div class="item-title">Registration & Welcome Coffee</div>
+            <div class="item-sub">Acreditación y coffee de bienvenida</div>
             <div class="item-tags"><span class="tag tag-reception">Registration</span></div>
           </div>
         </div>
@@ -307,12 +291,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">10:00</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
             <div class="item-title">Global Reveal</div>
-            <div class="item-sub">Presentación global del Renault Niagara</div>
+            <div class="item-sub">Presentación global Renault Niagara</div>
             <div class="item-tags"><span class="tag tag-reveal">Global Reveal</span></div>
           </div>
         </div>
@@ -322,12 +305,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time"></div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Creación de Contenido</div>
-            <div class="item-sub">Content Creation post-reveal</div>
+            <div class="item-title">Content Creation</div>
+            <div class="item-sub">Creación de contenido post-reveal</div>
             <div class="item-tags"><span class="tag tag-content">Content Creation</span></div>
           </div>
         </div>
@@ -337,12 +319,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">14:45</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Encuentro en Puerta Principal</div>
-            <div class="item-sub">Arena main entrance</div>
+            <div class="item-title">Meeting Point at Main Entrance</div>
+            <div class="item-sub">Encuentro en la puerta principal de la Arena</div>
             <div class="item-tags"><span class="tag tag-transfer">Transfer</span></div>
           </div>
         </div>
@@ -352,12 +333,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">15:00</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Salida hacia Hotel Sofitel Cardales</div>
-            <div class="item-sub">Transfer de regreso al hotel</div>
+            <div class="item-title">Departure to Hotel Sofitel Cardales</div>
+            <div class="item-sub">Salida hacia el Hotel Sofitel Cardales — Transfer de regreso</div>
             <div class="item-tags"><span class="tag tag-transfer">Transfer</span></div>
           </div>
         </div>
@@ -367,12 +347,11 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">20:30</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Cena Informal Libre</div>
-            <div class="item-sub">Restaurante La Butaca — Cena libre</div>
+            <div class="item-title">Informal Dinner at La Butaca</div>
+            <div class="item-sub">Cena informal libre — Restaurante La Butaca</div>
             <div class="item-tags"><span class="tag tag-dinner">Dinner</span></div>
           </div>
         </div>
@@ -382,29 +361,24 @@
         <div class="item-row">
           <div class="item-time-wrap">
             <div class="item-time">03:00</div>
-            
           </div>
           <div class="item-divider"></div>
           <div class="item-body">
-            <div class="item-title">Transfer hacia Aeropuerto</div>
-            <div class="item-sub">Encuentro en lobby con check-out realizado y equipaje en mano — Transfer a Aeropuerto Jorge Newbery</div>
+            <div class="item-title">Transfer to the Airport</div>
+            <div class="item-sub">Encuentro en el lobby con check-out realizado y equipaje en mano — Transfer a Aeropuerto Jorge Newbery</div>
             <div class="item-tags"><span class="tag tag-transfer">Transfer</span></div>
           </div>
         </div>
       </div>
-<div class="section-label">Notas</div>
 
-      <div class="agenda-item">
+      <div class="section-label">Notas</div>
+
+      <div class="agenda-item note-item">
         <div class="item-row">
-          <div class="item-time-wrap">
-            <div class="item-time"></div>
-            
-          </div>
           <div class="item-divider"></div>
           <div class="item-body">
             <div class="item-title">Nota</div>
             <div class="item-sub">Se sugiere realizar el check out luego de la cena.</div>
-            
           </div>
         </div>
       </div>
